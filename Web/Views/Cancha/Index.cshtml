@@ -6,17 +6,18 @@
 
 <h1>Index</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+<div class="row">
+    <div class="col-sm">
+        <a asp-action="Create" class="btn btn-primary">Nueva cancha</a>
+        &nbsp;&nbsp;
+        <a asp-action="ImportarCanchas" class="btn btn-success">Importar</a>
+    </div>
+</div>
 <table class="table">
     <thead>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Nombre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Disponible)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Precio)
@@ -31,9 +32,6 @@
                 @Html.DisplayFor(modelItem => item.Nombre)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Disponible)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Precio)
             </td>
             <td>
@@ -45,3 +43,56 @@
 }
     </tbody>
 </table>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+
+        function mostrarDatos() {
+            const input = document.getElementById("inputExcel")
+
+            const formData = new FormData()
+
+            formData.append("ArchivoExcel", input.files[0])
+
+            fetch("/Canchas/MostrarDatos",
+                {
+                    method: "POST",
+                    body: formData
+                })
+                .then((response) => { return response.json() })
+                .then((dataJson) => {
+                    dataJson.forEach((item) => {
+                        $("#tbData tbody").append(
+                            $("<tr>").append(
+                                $("<td>").text(item.Nombre),
+                                $("<td>").text(item.Precio)
+                            )
+                        )
+                    })
+                })
+        }
+
+
+        function enviarDatos() {
+            const input = document.getElementById("inputExcel")
+
+            const formData = new FormData()
+
+            formData.append("ArchivoExcel", input.files[0])
+
+            fetch("Canchas/EnviarDatos", {
+                method: "POST",
+                body: formData
+            })
+                .then((response) => { return response.json() })
+                .then((dataJson) => {
+                    alert(dataJson.mensaje);
+                })
+        }
+
+    </script>
+}

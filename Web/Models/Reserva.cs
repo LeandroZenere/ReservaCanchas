@@ -20,7 +20,7 @@ namespace Web.Models
         [ForeignKey("idPersona")]
         public virtual Persona? Persona { get; set; }
 
-        [ForeignKey("idEstado")]
-        public virtual Estado? Estado { get; set; }
+        //[ForeignKey("idEstado")]
+        //public virtual Estado? Estado { get; set; }
     }
 }

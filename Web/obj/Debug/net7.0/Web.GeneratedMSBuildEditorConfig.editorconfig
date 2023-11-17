@@ -10,6 +10,8 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Web
 build_property.RootNamespace = Web
 build_property.ProjectDir = C:\Users\PC\Documents\ReservaCancha\Web\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
@@ -30,6 +32,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/PC/Documents/ReservaCancha/Web/Views/Cancha/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FuY2hhXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Documents/ReservaCancha/Web/Views/Cancha/ImportarCanchas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FuY2hhXEltcG9ydGFyQ2FuY2hhcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/PC/Documents/ReservaCancha/Web/Views/Cancha/Index.cshtml]
@@ -62,30 +68,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/PC/Documents/ReservaCancha/Web/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/PC/Documents/ReservaCancha/Web/Views/ListaPrecio/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlzdGFQcmVjaW9cQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/PC/Documents/ReservaCancha/Web/Views/ListaPrecio/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlzdGFQcmVjaW9cRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/PC/Documents/ReservaCancha/Web/Views/ListaPrecio/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlzdGFQcmVjaW9cRGV0YWlscy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/PC/Documents/ReservaCancha/Web/Views/ListaPrecio/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlzdGFQcmVjaW9cRWRpdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/PC/Documents/ReservaCancha/Web/Views/ListaPrecio/ImportarListaPrecio.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlzdGFQcmVjaW9cSW1wb3J0YXJMaXN0YVByZWNpby5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/PC/Documents/ReservaCancha/Web/Views/ListaPrecio/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlzdGFQcmVjaW9cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/PC/Documents/ReservaCancha/Web/Views/Persona/Create.cshtml]

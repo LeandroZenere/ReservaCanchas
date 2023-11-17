@@ -1,14 +1,14 @@
-﻿@model Web.Models.ListaPrecio
+﻿@model Web.Models.Cancha
 
 @{
-    ViewData["Title"] = "Importar Lista de Precio";
+    ViewData["Title"] = "Importar Canchas";
 }
 
 <div class="row">
     <div class="col-sm-12">
 
         <div class="card">
-            <div class="card-header"> Importar Lista de Precio</div>
+            <div class="card-header"> Importar Canchas</div>
             <div class="card-body">
 
                 <div class="row">
@@ -37,7 +37,7 @@
                         <table id="tbData" class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th>Disponibilidad</th>
+                                    <th>Nombre</th>
                                     <th>Precio</th>
                                 </tr>
                             </thead>
@@ -74,7 +74,7 @@
                 document.getElementById("importStatus").textContent = "";
                 const formData = new FormData()
                 formData.append("ArchivoExcel", input.files[0])
-                fetch("/ListaPrecio/MostrarDatos",
+                fetch("/Cancha/MostrarDatos",
                     {
                         method: "POST",
                         body: formData
@@ -84,7 +84,7 @@
                         dataJson.forEach((item) => {
                             $("#tbData tbody").append(
                                 $("<tr>").append(
-                                    $("<td>").text(item.disponible),
+                                    $("<td>").text(item.nombre),
                                     $("<td>").text(item.precio)
                                 )
                             )
@@ -106,7 +106,7 @@
 
                 formData.append("ArchivoExcel", input.files[0])
 
-                fetch("/ListaPrecio/EnviarDatos", {
+                fetch("/Cancha/EnviarDatos", {
                     method: "POST",
                     body: formData
                 })

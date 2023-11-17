@@ -43,6 +43,5 @@ namespace Web.Repos
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 
-        public DbSet<Web.Models.ListaPrecio> ListaPrecio { get; set; } = default!;
     }
 }

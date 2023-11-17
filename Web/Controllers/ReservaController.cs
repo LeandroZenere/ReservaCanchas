@@ -22,7 +22,7 @@ namespace Web.Controllers
         // GET: Reserva
         public async Task<IActionResult> Index()
         {
-            var reservaCanchaContext = _context.Reserva.Include(r => r.Cancha).Include(r => r.Estado).Include(r => r.Persona);
+            var reservaCanchaContext = _context.Reserva.Include(r => r.Cancha).Include(r => r.Persona);
             return View(await reservaCanchaContext.ToListAsync());
         }
 
@@ -36,7 +36,6 @@ namespace Web.Controllers
 
             var reserva = await _context.Reserva
                 .Include(r => r.Cancha)
-                .Include(r => r.Estado)
                 .Include(r => r.Persona)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (reserva == null)
@@ -142,7 +141,6 @@ namespace Web.Controllers
 
             var reserva = await _context.Reserva
                 .Include(r => r.Cancha)
-                .Include(r => r.Estado)
                 .Include(r => r.Persona)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (reserva == null)
