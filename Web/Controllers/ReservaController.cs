@@ -22,7 +22,7 @@ namespace Web.Controllers
         // GET: Reserva
         public async Task<IActionResult> Index()
         {
-            var reservaCanchaContext = _context.Reserva.Include(r => r.Cancha).Include(r => r.Persona);
+            var reservaCanchaContext = _context.Reserva.Include(r => r.Cancha).Include(r => r.Estado).Include(r => r.Persona);
             return View(await reservaCanchaContext.ToListAsync());
         }
 
@@ -36,6 +36,7 @@ namespace Web.Controllers
 
             var reserva = await _context.Reserva
                 .Include(r => r.Cancha)
+                .Include(r => r.Estado)
                 .Include(r => r.Persona)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (reserva == null)
@@ -49,7 +50,7 @@ namespace Web.Controllers
         // GET: Reserva/Create
         public IActionResult Create()
         {
-            ViewData["idCancha"] = new SelectList(_context.Cancha, "Id", "Id");
+            ViewData["idCancha"] = new SelectList(_context.Cancha, "Id", "Nombre");
             ViewData["idEstado"] = new SelectList(_context.Estado, "Id", "Id");
             ViewData["idPersona"] = new SelectList(_context.Persona, "Id", "Id");
             return View();
@@ -68,7 +69,7 @@ namespace Web.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["idCancha"] = new SelectList(_context.Cancha, "Id", "Id", reserva.idCancha);
+            ViewData["idCancha"] = new SelectList(_context.Cancha, "Id", "Nombre", reserva.idCancha);
             ViewData["idEstado"] = new SelectList(_context.Estado, "Id", "Id", reserva.idEstado);
             ViewData["idPersona"] = new SelectList(_context.Persona, "Id", "Id", reserva.idPersona);
             return View(reserva);
@@ -87,7 +88,7 @@ namespace Web.Controllers
             {
                 return NotFound();
             }
-            ViewData["idCancha"] = new SelectList(_context.Cancha, "Id", "Id", reserva.idCancha);
+            ViewData["idCancha"] = new SelectList(_context.Cancha, "Id", "Nombre", reserva.idCancha);
             ViewData["idEstado"] = new SelectList(_context.Estado, "Id", "Id", reserva.idEstado);
             ViewData["idPersona"] = new SelectList(_context.Persona, "Id", "Id", reserva.idPersona);
             return View(reserva);
@@ -125,7 +126,7 @@ namespace Web.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["idCancha"] = new SelectList(_context.Cancha, "Id", "Id", reserva.idCancha);
+            ViewData["idCancha"] = new SelectList(_context.Cancha, "Id", "Nombre", reserva.idCancha);
             ViewData["idEstado"] = new SelectList(_context.Estado, "Id", "Id", reserva.idEstado);
             ViewData["idPersona"] = new SelectList(_context.Persona, "Id", "Id", reserva.idPersona);
             return View(reserva);
@@ -141,6 +142,7 @@ namespace Web.Controllers
 
             var reserva = await _context.Reserva
                 .Include(r => r.Cancha)
+                .Include(r => r.Estado)
                 .Include(r => r.Persona)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (reserva == null)

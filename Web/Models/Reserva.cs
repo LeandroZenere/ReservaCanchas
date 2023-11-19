@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Web.Models
 {
@@ -20,7 +21,7 @@ namespace Web.Models
         [ForeignKey("idPersona")]
         public virtual Persona? Persona { get; set; }
 
-        //[ForeignKey("idEstado")]
-        //public virtual Estado? Estado { get; set; }
+        [ForeignKey("idEstado")]
+        public virtual Estado? Estado { get; set; }
     }
 }

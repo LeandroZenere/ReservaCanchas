@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+MIKZzKzU7CrOF4mAaGuRqdnyg0xkRP4NJxUFK+pHJs=",
+  "Hash": "aT9KLTrknuTQaAxn0MmdULxFSJ1Z5mNI99kjLlFv0CQ=",
   "Source": "Web",
   "BasePath": "_content/Web",
   "Mode": "Default",
@@ -1233,12 +1233,12 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\PC\\Documents\\ReservaCancha\\Web\\wwwroot\\images\\61892f6f-9c72-4cc5-914b-0e913dbfbd84_El Juego del miedo 10.jpeg",
+      "Identity": "C:\\Users\\PC\\Documents\\ReservaCancha\\Web\\wwwroot\\images\\0e1ce76f-a722-4323-8817-7342b519a359_Exorcista - Creyente.jpg",
       "SourceId": "Web",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\PC\\Documents\\ReservaCancha\\Web\\wwwroot\\",
       "BasePath": "_content/Web",
-      "RelativePath": "images/61892f6f-9c72-4cc5-914b-0e913dbfbd84_El Juego del miedo 10.jpeg",
+      "RelativePath": "images/0e1ce76f-a722-4323-8817-7342b519a359_Exorcista - Creyente.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1249,7 +1249,26 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\61892f6f-9c72-4cc5-914b-0e913dbfbd84_El Juego del miedo 10.jpeg"
+      "OriginalItemSpec": "wwwroot\\images\\0e1ce76f-a722-4323-8817-7342b519a359_Exorcista - Creyente.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\PC\\Documents\\ReservaCancha\\Web\\wwwroot\\images\\fe9aaa41-1d2e-488e-935f-516ab60e7708_Sonido de Libertad.jpg",
+      "SourceId": "Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\PC\\Documents\\ReservaCancha\\Web\\wwwroot\\",
+      "BasePath": "_content/Web",
+      "RelativePath": "images/fe9aaa41-1d2e-488e-935f-516ab60e7708_Sonido de Libertad.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\fe9aaa41-1d2e-488e-935f-516ab60e7708_Sonido de Libertad.jpg"
     },
     {
       "Identity": "C:\\Users\\PC\\Documents\\ReservaCancha\\Web\\wwwroot\\js\\site.js",

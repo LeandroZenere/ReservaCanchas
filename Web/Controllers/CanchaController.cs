@@ -27,9 +27,9 @@ namespace Web.Controllers
         // GET: Cancha
         public async Task<IActionResult> Index()
         {
-              return _context.Cancha != null ? 
-                          View(await _context.Cancha.ToListAsync()) :
-                          Problem("Entity set 'ReservaCanchaContext.Cancha'  is null.");
+            return _context.Cancha != null ?
+                                      View(await _context.Cancha.ToListAsync()) :
+                                      Problem("Entity set 'ReservaCanchaContext.Cancha'  is null.");
         }
 
         // GET: Cancha/Details/5
@@ -53,6 +53,7 @@ namespace Web.Controllers
         // GET: Cancha/Create
         public IActionResult Create()
         {
+            ViewData["idEstado"] = new SelectList(_context.Estado, "Id", "Nombre");
             return View();
         }
 
@@ -249,7 +250,7 @@ namespace Web.Controllers
                     lista.Add(new Cancha
                     {
                         Nombre = fila.GetCell(0).ToString(),
-                        Precio = Decimal.Parse(fila.GetCell(1).ToString()),
+                        Precio = Decimal.Parse(fila.GetCell(1).ToString())
 
                     });
                 }

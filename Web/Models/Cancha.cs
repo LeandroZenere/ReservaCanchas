@@ -18,8 +18,12 @@ namespace Web.Models
         [Column(TypeName = "decimal(18, 2)")]
         public decimal Precio { get; set; }
 
-        [ForeignKey("idEstado")]
-        public virtual Estado? Estado { get; set; }
+        //[Display(Name = "Estado")]
+        //public int? EstadoId { get; set; }
+
+        //[ForeignKey("idEstado")]
+        //public virtual Estado? Estado { get; set; }
+
     }
 }
 

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Web.Repos;
 
@@ -11,9 +12,11 @@ using Web.Repos;
 namespace Web.Migrations
 {
     [DbContext(typeof(ReservaCanchaContext))]
-    partial class ReservaCanchaContextModelSnapshot : ModelSnapshot
+    [Migration("20231118164842_prueba2")]
+    partial class prueba2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -30,6 +33,9 @@ namespace Web.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int?>("EstadoId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Nombre")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -38,7 +44,12 @@ namespace Web.Migrations
                     b.Property<decimal>("Precio")
                         .HasColumnType("decimal(18, 2)");
 
+                    b.Property<int?>("idEstado")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("idEstado");
 
                     b.ToTable("Cancha");
                 });
@@ -122,11 +133,18 @@ namespace Web.Migrations
 
                     b.HasIndex("idCancha");
 
-                    b.HasIndex("idEstado");
-
                     b.HasIndex("idPersona");
 
                     b.ToTable("Reserva");
+                });
+
+            modelBuilder.Entity("Web.Models.Cancha", b =>
+                {
+                    b.HasOne("Web.Models.Estado", "Estado")
+                        .WithMany()
+                        .HasForeignKey("idEstado");
+
+                    b.Navigation("Estado");
                 });
 
             modelBuilder.Entity("Web.Models.Reserva", b =>
@@ -137,12 +155,6 @@ namespace Web.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Web.Models.Estado", "Estado")
-                        .WithMany()
-                        .HasForeignKey("idEstado")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Web.Models.Persona", "Persona")
                         .WithMany()
                         .HasForeignKey("idPersona")
@@ -150,8 +162,6 @@ namespace Web.Migrations
                         .IsRequired();
 
                     b.Navigation("Cancha");
-
-                    b.Navigation("Estado");
 
                     b.Navigation("Persona");
                 });

@@ -42,9 +42,12 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Dni)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FotoDni)
-            </td>
+                <td>
+                    <img src="~/images/@item.FotoDni"
+                         class="rounded-start"
+                         height="150" width="150"
+                         asp-append-version="true" />           
+                </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Telefono)
             </td>
