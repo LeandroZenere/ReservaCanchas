@@ -20,6 +20,7 @@ namespace Web.Controllers
         }
 
         // GET: Reserva
+
         public async Task<IActionResult> Index()
         {
             var reservaCanchaContext = _context.Reserva.Include(r => r.Cancha).Include(r => r.Estado).Include(r => r.Persona);
