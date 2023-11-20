@@ -4,15 +4,19 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
-
+<h1>CANCHAS</h1>
+<p>Aquí podrás ver los datos de las canchas.</p>
+<p>Si tienes nuevas canchas para agregar, usa el botón de 'Nueva Cancha'.</p>
+<p>También existe la alternativa para importar todas tus canchas y sus precios desde un Excel.</p>
+<p>Utiliza el botón de 'Importar'.</p>
 <div class="row">
     <div class="col-sm">
-        <a asp-action="Create" class="btn btn-primary">Nueva cancha</a>
+        <a asp-action="Create" class="btn btn-primary">Nueva Cancha</a>
         &nbsp;&nbsp;
         <a asp-action="ImportarCanchas" class="btn btn-success">Importar</a>
     </div>
 </div>
+<br/>
 <table class="table">
     <thead>
         <tr>
