@@ -71,7 +71,7 @@ namespace Web.Controllers
                     Nombre = model.Nombre,
                     Apellido = model.Apellido,
                     Dni = model.Dni,
-                    Telefono = model.Telefono,
+                    Telefono = model.Telefono
                 };
                 _context.Add(pelicula);
                 await _context.SaveChangesAsync();
@@ -79,16 +79,6 @@ namespace Web.Controllers
             }
             return View(model);
         }
-        //public async Task<IActionResult> Create([Bind("Id,Nombre,Apellido,Dni,FotoDni,Telefono")] Persona persona)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        _context.Add(persona);
-        //        await _context.SaveChangesAsync();
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    return View(persona);
-        //}
 
         private string UploadedFile(PersonaViewModel model)
         {
@@ -107,19 +97,31 @@ namespace Web.Controllers
             return uniqueFileName;
         }
         // GET: Persona/Edit/5
+
         public async Task<IActionResult> Edit(int? id)
         {
+
             if (id == null || _context.Persona == null)
             {
                 return NotFound();
             }
 
             var persona = await _context.Persona.FindAsync(id);
+
+            PersonaViewModel personaViewModel = new PersonaViewModel()
+            {
+
+                Nombre = persona.Nombre,
+                Apellido = persona.Apellido,
+                Dni = persona.Dni,
+                Telefono = persona.Telefono
+            };
+
             if (persona == null)
             {
                 return NotFound();
             }
-            return View(persona);
+            return View(personaViewModel);
         }
 
         // POST: Persona/Edit/5
@@ -127,9 +129,11 @@ namespace Web.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nombre,Apellido,Dni,FotoDni,Telefono")] Persona persona)
+        public async Task<IActionResult> Edit(int id, PersonaViewModel model)
         {
-            if (id != persona.Id)
+
+            string uniqueFileName = UploadedFile(model);
+            if (id != model.Id)
             {
                 return NotFound();
             }
@@ -138,12 +142,20 @@ namespace Web.Controllers
             {
                 try
                 {
+                    var persona = await _context.Persona.FindAsync(id);
+
+                    persona.FotoDni = uniqueFileName;
+                    persona.Nombre = model.Nombre;
+                    persona.Apellido = model.Apellido;
+                    persona.Telefono = model.Telefono;
+                    persona.Dni = model.Dni;
+
                     _context.Update(persona);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!PersonaExists(persona.Id))
+                    if (!PersonaExists(model.Id))
                     {
                         return NotFound();
                     }
@@ -154,8 +166,9 @@ namespace Web.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(persona);
+            return View(model);
         }
+
 
         // GET: Persona/Delete/5
         public async Task<IActionResult> Delete(int? id)

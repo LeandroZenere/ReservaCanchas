@@ -5,12 +5,60 @@
       "PackagePath": "staticwebassets\\Web.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\PC\\Documents\\ReservaCancha\\Web\\wwwroot\\archivos\\ListaDePrecios.xlsx",
+      "PackagePath": "staticwebassets\\archivos\\ListaDePrecios.xlsx"
+    },
+    {
       "Id": "C:\\Users\\PC\\Documents\\ReservaCancha\\Web\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "C:\\Users\\PC\\Documents\\ReservaCancha\\Web\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Documents\\ReservaCancha\\Web\\wwwroot\\images\\08ddf83f-bcaf-448a-bac6-539900d97eed_Toy Story.jpg",
+      "PackagePath": "staticwebassets\\images\\08ddf83f-bcaf-448a-bac6-539900d97eed_Toy Story.jpg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Documents\\ReservaCancha\\Web\\wwwroot\\images\\0dfad9d0-2ac0-4d41-b354-04385951ccc0_Los increíbles.jpg",
+      "PackagePath": "staticwebassets\\images\\0dfad9d0-2ac0-4d41-b354-04385951ccc0_Los increíbles.jpg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Documents\\ReservaCancha\\Web\\wwwroot\\images\\0e1ce76f-a722-4323-8817-7342b519a359_Exorcista - Creyente.jpg",
+      "PackagePath": "staticwebassets\\images\\0e1ce76f-a722-4323-8817-7342b519a359_Exorcista - Creyente.jpg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Documents\\ReservaCancha\\Web\\wwwroot\\images\\14d5d230-a807-4efc-ba67-ca3bd79c8ba3_Exorcista - Creyente.jpg",
+      "PackagePath": "staticwebassets\\images\\14d5d230-a807-4efc-ba67-ca3bd79c8ba3_Exorcista - Creyente.jpg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Documents\\ReservaCancha\\Web\\wwwroot\\images\\825d6a5f-5640-4f04-9dab-744464d11688_Sonido de Libertad.jpg",
+      "PackagePath": "staticwebassets\\images\\825d6a5f-5640-4f04-9dab-744464d11688_Sonido de Libertad.jpg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Documents\\ReservaCancha\\Web\\wwwroot\\images\\9f2c9024-6b2c-49cb-960c-05e226a4640f_dniMujer.jpg",
+      "PackagePath": "staticwebassets\\images\\9f2c9024-6b2c-49cb-960c-05e226a4640f_dniMujer.jpg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Documents\\ReservaCancha\\Web\\wwwroot\\images\\c38ff119-6ced-4db8-9051-5e19adada59b_dniMujer.jpg",
+      "PackagePath": "staticwebassets\\images\\c38ff119-6ced-4db8-9051-5e19adada59b_dniMujer.jpg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Documents\\ReservaCancha\\Web\\wwwroot\\images\\f48cbbce-6382-4163-9b1a-518cc0e6e7e0_El Juego del miedo 10.jpeg",
+      "PackagePath": "staticwebassets\\images\\f48cbbce-6382-4163-9b1a-518cc0e6e7e0_El Juego del miedo 10.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Documents\\ReservaCancha\\Web\\wwwroot\\images\\fc2ae392-15a6-4e54-a9ca-0a25ef238882_dniHombre.jpg",
+      "PackagePath": "staticwebassets\\images\\fc2ae392-15a6-4e54-a9ca-0a25ef238882_dniHombre.jpg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Documents\\ReservaCancha\\Web\\wwwroot\\images\\fc6b7a57-f95c-45e7-bd34-20ae6837c477_Exorcista - Creyente.jpg",
+      "PackagePath": "staticwebassets\\images\\fc6b7a57-f95c-45e7-bd34-20ae6837c477_Exorcista - Creyente.jpg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Documents\\ReservaCancha\\Web\\wwwroot\\images\\fe9aaa41-1d2e-488e-935f-516ab60e7708_Sonido de Libertad.jpg",
+      "PackagePath": "staticwebassets\\images\\fe9aaa41-1d2e-488e-935f-516ab60e7708_Sonido de Libertad.jpg"
     },
     {
       "Id": "C:\\Users\\PC\\Documents\\ReservaCancha\\Web\\wwwroot\\js\\site.js",

@@ -10,9 +10,9 @@ namespace Web.ViewModels
         [Display(Name = "Apellido")]
         public string Apellido { get; set; }
         [Display(Name = "Dni")]
-        public string Dni { get; set; }
+        public int Dni { get; set; }
         [Display(Name = "Telefono")]
-        public string Telefono { get; set; }
+        public int Telefono { get; set; }
 
         [Display(Name = "Foto DNI")]
         public IFormFile Foto { get; set; }

@@ -20,6 +20,7 @@ namespace Web.Controllers
         }
 
         // GET: Reserva
+
         public async Task<IActionResult> Index()
         {
             var reservaCanchaContext = _context.Reserva.Include(r => r.Cancha).Include(r => r.Estado).Include(r => r.Persona);
@@ -50,10 +51,19 @@ namespace Web.Controllers
         // GET: Reserva/Create
         public IActionResult Create()
         {
-            ViewData["idCancha"] = new SelectList(_context.Cancha, "Id", "Id");
-            ViewData["idEstado"] = new SelectList(_context.Estado, "Id", "Id");
-            ViewData["idPersona"] = new SelectList(_context.Persona, "Id", "Id");
-            return View();
+            var model = new Reserva();
+
+            var personas = _context.Persona.Select(x => new
+            {
+                x.Id,
+                NombreCompleto = $"{x.Nombre} {x.Apellido}"
+            });
+
+            ViewData["idCancha"] = new SelectList(_context.Cancha, "Id", "Nombre");
+            ViewData["idEstado"] = new SelectList(_context.Estado, "Id", "Nombre");
+            //ViewData["idPersona"] = new SelectList(_context.Persona, "Id", "NombreCompleto");
+            ViewData["idPersona"] = new SelectList(personas, "Id", "NombreCompleto");
+            return View(model);
         }
 
         // POST: Reserva/Create
@@ -69,9 +79,10 @@ namespace Web.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["idCancha"] = new SelectList(_context.Cancha, "Id", "Id", reserva.idCancha);
-            ViewData["idEstado"] = new SelectList(_context.Estado, "Id", "Id", reserva.idEstado);
-            ViewData["idPersona"] = new SelectList(_context.Persona, "Id", "Id", reserva.idPersona);
+
+            ViewData["idCancha"] = new SelectList(_context.Cancha, "Id", "Nombre", reserva.idCancha);
+            ViewData["idEstado"] = new SelectList(_context.Estado, "Id", "Nombre", reserva.idEstado);
+            ViewData["idPersona"] = new SelectList(_context.Persona, "Id", "Nombre", reserva.idPersona);
             return View(reserva);
         }
 
@@ -88,9 +99,9 @@ namespace Web.Controllers
             {
                 return NotFound();
             }
-            ViewData["idCancha"] = new SelectList(_context.Cancha, "Id", "Id", reserva.idCancha);
-            ViewData["idEstado"] = new SelectList(_context.Estado, "Id", "Id", reserva.idEstado);
-            ViewData["idPersona"] = new SelectList(_context.Persona, "Id", "Id", reserva.idPersona);
+            ViewData["idCancha"] = new SelectList(_context.Cancha, "Id", "Nombre", reserva.idCancha);
+            ViewData["idEstado"] = new SelectList(_context.Estado, "Id", "Nombre", reserva.idEstado);
+            ViewData["idPersona"] = new SelectList(_context.Persona, "Id", "Nombre", reserva.idPersona);
             return View(reserva);
         }
 
@@ -126,9 +137,9 @@ namespace Web.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["idCancha"] = new SelectList(_context.Cancha, "Id", "Id", reserva.idCancha);
-            ViewData["idEstado"] = new SelectList(_context.Estado, "Id", "Id", reserva.idEstado);
-            ViewData["idPersona"] = new SelectList(_context.Persona, "Id", "Id", reserva.idPersona);
+            ViewData["idCancha"] = new SelectList(_context.Cancha, "Id", "Nombre", reserva.idCancha);
+            ViewData["idEstado"] = new SelectList(_context.Estado, "Id", "Nombre", reserva.idEstado);
+            ViewData["idPersona"] = new SelectList(_context.Persona, "Id", "Nombre", reserva.idPersona);
             return View(reserva);
         }
 

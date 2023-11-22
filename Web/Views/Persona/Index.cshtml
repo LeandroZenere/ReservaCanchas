@@ -4,11 +4,15 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
-
+<h1>PERSONAS</h1>
+<p>Aquí podrás ver los datos de las personas.</p>
+<p>Si tienes una nueva persona que desea reservar, utiliza el botón de 'Nueva Persona'.</p>
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-primary">Nueva Persona</a>
+    &nbsp;&nbsp;
 </p>
+
+<br />
 <table class="table">
     <thead>
         <tr>
@@ -42,9 +46,12 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Dni)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FotoDni)
-            </td>
+                <td>
+                    <img src="~/images/@item.FotoDni"
+                         class="rounded-start"
+                         height="150" width="300"
+                         asp-append-version="true" />           
+                </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Telefono)
             </td>
